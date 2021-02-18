@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# http://silo.cs.indiana.edu:46271/cgi-bin/02-18-buttons/program
+
 import cgi
 
 print "Content-Type: text/html"     # HTML is following
@@ -8,3 +10,16 @@ print                               # blank line, end of headers
 print "<TITLE>CGI script output</TITLE>"
 print "<H1>This is my first CGI script</H1>"
 print "Hello, world!"
+
+print """
+  <table>
+    <tr> <td> <hr>
+    <tr> <td> Stage Two: Two Buttons
+    <tr> <td>
+            <form>
+               Welcome, you have clicked the button 0 times. <p>
+
+               <input type=submit name=action value=Whatever>
+            </form>
+  </table>
+"""
