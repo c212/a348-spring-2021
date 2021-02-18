@@ -1,6 +1,10 @@
 #!/usr/bin/python
 
 # http://silo.cs.indiana.edu:46271/cgi-bin/02-18-buttons/program
+# http://silo.cs.indiana.edu:46271/cgi-bin/02-18-buttons/program?counter=0&action=Down
+# http://silo.cs.indiana.edu:46271/cgi-bin/02-18-buttons/program?counter=0&action=Up
+
+# http://silo.cs.indiana.edu:46271/cgi-bin/02-18-buttons/program?counter=23&action=Up
 
 import cgi
 
@@ -14,16 +18,20 @@ print "<TITLE>CGI script output</TITLE>"
 print "<H1>This is my first CGI script</H1>"
 print "Hello, world!"
 
+counter = 0
+
 print """
   <table>
     <tr> <td> <hr>
     <tr> <td> Stage Two: Two Buttons
     <tr> <td>
             <form>
-               Welcome, you have clicked the button %s times. <p>
+               Welcome, you have clicked the button
+               <input type=text name=counter value=%s size=4> times. <p>
 
                <input type=submit name=action value=Up>
                <input type=submit name=action value=Down>
             </form>
   </table>
 """ % (counter)
+
