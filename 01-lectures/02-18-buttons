@@ -24,9 +24,16 @@ if "action" not in isaac or "counter" not in isaac:
   action = "Unknown"
 else:
   action = isaac["action"].value
-  counter = isaac["counter"].value
+  counter = int(isaac["counter"].value)
 
 print "action = (", action, ") counter=(", counter, ")"
+
+if action == "Up":
+  counter = counter + 1
+elif action == "Down":
+  counter = counter - 1
+else:
+  pass
 
 print """
   <table>
@@ -35,11 +42,9 @@ print """
     <tr> <td>
             <form>
                Welcome, you have clicked the button
-               <input type=text name=counter value=%s size=4> times. <p>
+               <input type=hidden name=counter value=%s size=4> <font size=+3 color=red>%s</font> times. <p>
                <input type=submit name=action value=Up>
                <input type=submit name=action value=Down>
             </form>
   </table>
-""" % (counter)
-
-
+""" % (counter, counter)
